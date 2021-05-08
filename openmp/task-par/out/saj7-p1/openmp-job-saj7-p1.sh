@@ -19,12 +19,12 @@
 #$ -cwd
 
 # Defines  or  redefines  the  path used for the standard error stream of the job.
-#$ -e stderr
+#$ -e /home/saframa6/testing/openmp/task-par/out/saj7-p1/stderr
 
 # The path used for the standard output stream of the job.
-#$ -o stdout
+#$ -o /home/saframa6/testing/openmp/task-par/out/saj7-p1/stdout
 
 # Do not change.
 #$ -pe ompi 1
 
-run.out /home/saframa6/ni-pdp-semestralka/data/saj7.txt
+/home/saframa6/testing/openmp/task-par/out/saj7-p1/run.out /home/saframa6/ni-pdp-semestralka/data/saj7.txt

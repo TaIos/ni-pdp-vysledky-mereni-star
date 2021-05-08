@@ -19,12 +19,12 @@
 #$ -cwd
 
 # Defines  or  redefines  the  path used for the standard error stream of the job.
-#$ -e /home/saframa6/testing/openmp/task-par-threshold/out/saj7-p1/stderr
+#$ -e /home/saframa6/testing/openmp/task-par-threshold/out/saj10-p4/stderr
 
 # The path used for the standard output stream of the job.
-#$ -o /home/saframa6/testing/openmp/task-par-threshold/out/saj7-p1/stdout
+#$ -o /home/saframa6/testing/openmp/task-par-threshold/out/saj10-p4/stdout
 
 # Do not change.
 #$ -pe ompi 1
 
-/home/saframa6/testing/openmp/task-par-threshold/out/saj7-p1/run.out /home/saframa6/ni-pdp-semestralka/data/saj7.txt
+/home/saframa6/testing/openmp/task-par-threshold/out/saj10-p4/run.out /home/saframa6/ni-pdp-semestralka/data/saj10.txt

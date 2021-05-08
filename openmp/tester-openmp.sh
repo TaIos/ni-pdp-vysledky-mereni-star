@@ -52,7 +52,6 @@ do
 
 		${QRUN_CMD} ${RUN_SCRIPT}
 		echo "============================="
-		exit 0
 	done
 done
 
