@@ -1,7 +1,7 @@
 CPP_PROGRAM_TEMPLATE='main.template.cpp'
 RUN_SCRIPT_TEMPLATE='parallel_job.template.sh'
 CPP_COMPILE="mpicxx"
-CPP_FLAGS="--std=c++11 -lm -O3 -funroll-loops"
+CPP_FLAGS="--std=c++11 -lm -O3 -funroll-loops -fopenmp"
 QRUN_CMD_TEMPLATE="qrun2 20c {NODENUM} pdp_fast"  # OR pdp_long
 DATA_PATH="/home/saframa6/ni-pdp-semestralka/data"
 
@@ -20,6 +20,11 @@ createDirectory ${OUT_DIR}
 INSTANCES=(7 10 12) # saj instance id
 PROCNUMS=(1 2 4 6 8 10 16 20) # number of processors
 NODENUMS=(2 3 4) # number of MPI nodes
+
+# REMOVE TWO LINES
+PROCNUMS=(20) # number of processors
+NODENUMS=(4) # number of MPI nodes
+INSTANCES=(7) # saj instance id
 
 for INSTANCE in ${INSTANCES[*]}
 do
@@ -44,7 +49,7 @@ do
 
 			QRUN_CMD=$(sed "s/{NODENUM}/${NODENUM}/g"  <<< ${QRUN_CMD_TEMPLATE})
 
-			cat ${CPP_PROGRAM_TEMPLATE} > ${CPP_PROGRAM}
+			sed "s/{PROCNUM}/$PROCNUM/g" ${CPP_PROGRAM_TEMPLATE} > ${CPP_PROGRAM}
 			
 			echo -e "\tCOMPILE: ${CPP_COMPILE} ${CPP_FLAGS} ${CPP_PROGRAM} -o ${EXE_PROGRAM}"
 			${CPP_COMPILE} ${CPP_FLAGS} ${CPP_PROGRAM} -o ${EXE_PROGRAM}
@@ -54,12 +59,10 @@ do
 				s|{ARGUMENTS}|$DATA_PATH/saj$INSTANCE.txt|g;
 				s|{STDOUT}|$STDOUT|g;
 				s|{STDERR}|$STDERR|g;
-				s|{OMP_NUM_THREADS}|$PROCNUM|g;
 				" ${RUN_SCRIPT_TEMPLATE} > ${RUN_SCRIPT}
 			echo -e "\tQRUN: ${QRUN_CMD} ${RUN_SCRIPT}"
 
 			${QRUN_CMD} ${RUN_SCRIPT}
-			exit 0
 			echo "============================="
 		done
 	done

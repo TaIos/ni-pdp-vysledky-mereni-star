@@ -726,6 +726,7 @@ ChessBoard bbDfsDataPar(const Instance &startInstance, long &bestPathLen, long &
     vector<Instance *> instances = generateInstancesFrom(startInstance, &earlySolution);
     if (!earlySolution) {
         ChessBoard bestBoard(startInstance.board);
+		omp_set_num_threads({PROCNUM}); // CHANGE
 #pragma omp parallel for shared(instances, bestBoard, bestPathLen, counter) schedule(dynamic) default(none)
         for (unsigned long i = 0; i < instances.size(); i++) {
             bbDfsSeq(instances[i], bestBoard, bestPathLen, counter);

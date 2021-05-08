@@ -70,7 +70,6 @@ MY_PARALLEL_PROGRAM="{EXE_PROGRAM} {ARGUMENTS}"
 # | Export environment variable to execution nodes                            |
 # |                                                                           |
 #  ===========================================================================
-#$ export OMP_NUM_THREADS={OMP_NUM_THREADS}
 # export MY_VARIABLE2="..."
 
 
