@@ -18,7 +18,7 @@ OUT_DIR="out$(find . -mindepth 1 -maxdepth 1 | sed 's/^\.\///g' | grep -P '^out\
 createDirectory ${OUT_DIR}
 
 INSTANCES=(7 10 12)
-PROCNUMS=(1 2 4 6 8 1 16 20)
+PROCNUMS=(1 2 4 6 8 10 16 20)
 for INSTANCE in ${INSTANCES[*]}
 do
 	for PROCNUM in ${PROCNUMS[*]}
