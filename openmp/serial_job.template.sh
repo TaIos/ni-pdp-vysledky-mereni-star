@@ -28,4 +28,3 @@
 #$ -pe ompi 1
 
 {EXE_PROGRAM} {ARGUMENTS}
-#run.out /home/saframa6/ni-pdp-semestralka/data/saj{INSTANCE}.txt
