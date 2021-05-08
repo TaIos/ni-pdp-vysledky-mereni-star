@@ -30,7 +30,7 @@ do
 		EXE_PROGRAM=$(realpath "${WORKDIR}/run.out")
 		RUN_SCRIPT=$(realpath "${WORKDIR}/openmp-job-saj${INSTANCE}-p${PROCNUM}.sh")
 		STDERR=$(realpath ${WORKDIR}/stderr)
-		STDOUT=$(realpath ${WORKDIR}/stderr)
+		STDOUT=$(realpath ${WORKDIR}/stdout)
 		touch ${STDERR} ${STDOUT}
 
 		echo $WORKDIR
@@ -50,8 +50,7 @@ do
 			" ${RUN_SCRIPT_TEMPLATE} > ${RUN_SCRIPT}
 		echo -e "\tQRUN: ${QRUN_CMD} ${RUN_SCRIPT}"
 
-		#${QRUN_CMD} $(basename ${RUN_SCRIPT})
-
+		${QRUN_CMD} ${RUN_SCRIPT}
 		echo "============================="
 		exit 0
 	done
