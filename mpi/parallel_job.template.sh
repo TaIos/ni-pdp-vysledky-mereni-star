@@ -32,14 +32,14 @@
 # | of the job.                                                               |
 # |                                                                           |
 #  ===========================================================================
-#$ -e stderr-saj1-mpi
+#$ -e {STDERR}
 
 #  ===========================================================================
 # |                                                                           |
 # | The path used for the standard output stream of the job.                  |
 # |                                                                           |
 #  ===========================================================================
-#$ -o stdout-saj1-mpi
+#$ -o {STDOUT}
 
 #  ===========================================================================
 # |                                                                           |
@@ -63,14 +63,14 @@ INFINIBAND="false"
 # | Parallel program with arguments.                                          |
 # |                                                                           |
 #  ===========================================================================
-MY_PARALLEL_PROGRAM="./mpi-run.out /home/saframa6/ni-pdp-semestralka/data/saj1.txt"
+MY_PARALLEL_PROGRAM="{EXE_PROGRAM} {ARGUMENTS}"
 
 #  ===========================================================================
 # |                                                                           |
 # | Export environment variable to execution nodes                            |
 # |                                                                           |
 #  ===========================================================================
-# export MY_VARIABLE1="..."
+#$ export OMP_NUM_THREADS={OMP_NUM_THREADS}
 # export MY_VARIABLE2="..."
 
 
