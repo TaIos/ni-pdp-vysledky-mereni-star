@@ -1,6 +1,5 @@
 CPP_PROGRAM_TEMPLATE='main.template.cpp'
 RUN_SCRIPT_TEMPLATE='../serial_job.template.sh'
-OUT_DIR="out"
 CPP_COMPILE="g++"
 CPP_FLAGS="--std=c++11 -O3 -funroll-loops -fopenmp"
 QRUN_CMD="qrun2 20c 1 pdp_serial"
@@ -14,6 +13,7 @@ createDirectory() {
 }
 
 cd ${1:-$(pwd)}
+OUT_DIR="out$(find . -mindepth 1 -maxdepth 1 | sed 's/^\.\///g' | grep -P '^out\d*$' | wc -l)"
 
 createDirectory ${OUT_DIR}
 
@@ -50,6 +50,7 @@ do
 			" ${RUN_SCRIPT_TEMPLATE} > ${RUN_SCRIPT}
 		echo -e "\tQRUN: ${QRUN_CMD} ${RUN_SCRIPT}"
 
+		exit 0
 		${QRUN_CMD} ${RUN_SCRIPT}
 		echo "============================="
 	done
