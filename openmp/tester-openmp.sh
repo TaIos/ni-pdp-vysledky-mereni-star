@@ -17,8 +17,8 @@ OUT_DIR="out$(find . -mindepth 1 -maxdepth 1 | sed 's/^\.\///g' | grep -P '^out\
 
 createDirectory ${OUT_DIR}
 
-INSTANCES=(7 10 12)
-PROCNUMS=(1 2 4 6 8 10 16 20)
+INSTANCES=(7 10 12) # saj instance id
+PROCNUMS=(1 2 4 6 8 10 16 20) # number of openmp cores
 for INSTANCE in ${INSTANCES[*]}
 do
 	for PROCNUM in ${PROCNUMS[*]}
