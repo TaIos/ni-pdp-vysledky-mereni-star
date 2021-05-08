@@ -2,7 +2,7 @@ CPP_PROGRAM_TEMPLATE='main.template.cpp'
 RUN_SCRIPT_TEMPLATE='parallel_job.template.sh'
 CPP_COMPILE="mpicxx"
 CPP_FLAGS="--std=c++11 -lm -O3 -funroll-loops -fopenmp"
-QRUN_CMD_TEMPLATE="qrun2 20c {NODENUM} pdp_fast"  # pdp_fast/pdp_long
+QRUN_CMD_TEMPLATE="qrun2 20c {NODENUM} pdp_long"  # pdp_fast/pdp_long
 DATA_PATH="/home/saframa6/ni-pdp-semestralka/data"
 
 createDirectory() {
