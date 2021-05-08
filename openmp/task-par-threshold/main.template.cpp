@@ -19,7 +19,7 @@ Tested on values from set {2, 3, 4, 5, 6, 99999}.
 Testing showed sweetspot is T=6.
 Tested on: AMD Ryzen 7 PRO 4750U, 8 physical 16 virtual cores,1397.271 MHz
 */
-#define TASK_THRESHOLD 6
+#define TASK_THRESHOLD {THRESHOLD}
 
 
 // relative mapping for all possible horse movements
