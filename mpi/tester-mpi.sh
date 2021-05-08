@@ -18,7 +18,7 @@ OUT_DIR="out$(find . -mindepth 1 -maxdepth 1 | sed 's/^\.\///g' | grep -P '^out\
 createDirectory ${OUT_DIR}
 
 INSTANCES=(7 10 12) # saj instance id
-PROCNUMS=(1 2 4 6 8 10 16 20) # number of openmp cores
+PROCNUMS=(6 8 12 16 20) # number of openmp cores
 NODENUMS=(3 4) # total number of MPI nodes
 for INSTANCE in ${INSTANCES[*]}
 do
