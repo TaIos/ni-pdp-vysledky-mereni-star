@@ -50,7 +50,6 @@ do
 			" ${RUN_SCRIPT_TEMPLATE} > ${RUN_SCRIPT}
 		echo -e "\tQRUN: ${QRUN_CMD} ${RUN_SCRIPT}"
 
-		exit 0
 		${QRUN_CMD} ${RUN_SCRIPT}
 		echo "============================="
 	done
