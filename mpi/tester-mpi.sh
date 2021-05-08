@@ -2,7 +2,7 @@ CPP_PROGRAM_TEMPLATE='main.template.cpp'
 RUN_SCRIPT_TEMPLATE='parallel_job.template.sh'
 CPP_COMPILE="mpicxx"
 CPP_FLAGS="--std=c++11 -lm -O3 -funroll-loops -fopenmp"
-QRUN_CMD_TEMPLATE="qrun2 20c {NODENUM} pdp_fast"  # OR pdp_long
+QRUN_CMD_TEMPLATE="qrun2 20c {NODENUM} pdp_fast"  # pdp_fast/pdp_long
 DATA_PATH="/home/saframa6/ni-pdp-semestralka/data"
 
 createDirectory() {
@@ -18,14 +18,8 @@ OUT_DIR="out$(find . -mindepth 1 -maxdepth 1 | sed 's/^\.\///g' | grep -P '^out\
 createDirectory ${OUT_DIR}
 
 INSTANCES=(7 10 12) # saj instance id
-PROCNUMS=(1 2 4 6 8 10 16 20) # number of processors
-NODENUMS=(2 3 4) # number of MPI nodes
-
-# REMOVE TWO LINES
-PROCNUMS=(20) # number of processors
-NODENUMS=(4) # number of MPI nodes
-INSTANCES=(7) # saj instance id
-
+PROCNUMS=(1 2 4 6 8 10 16 20) # number of openmp cores
+NODENUMS=(3 4) # total number of MPI nodes
 for INSTANCE in ${INSTANCES[*]}
 do
 	for PROCNUM in ${PROCNUMS[*]}

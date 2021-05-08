@@ -758,7 +758,7 @@ int main(int argc, char **argv) {
         Instance startInstance(ChessBoard(argv[1]), 0, BISHOP, numeric_limits<int>::max());
         ChessBoard bestBoard(startInstance.board);
         int bestPathLen = numeric_limits<int>::max();
-        cout << startInstance.board << endl;
+        //cout << startInstance.board << endl;
         ChessBoard *earlyBoard = nullptr;
         vector<Instance *> insList = generateInstancesFrom(startInstance, &earlyBoard);
         if (earlyBoard) {
@@ -793,9 +793,9 @@ int main(int argc, char **argv) {
                 MPI_Recv(&buf[0], msgLen, MPI_CHAR, status.MPI_SOURCE, status.MPI_TAG, MPI_COMM_WORLD,
                          MPI_STATUS_IGNORE);
                 ChessBoard receivedBoard = ChessBoard::deserializeFromBuffer(buf, msgLen);
-                cout << myRank << ": Dostal jsem vyřešenou instaci od procesu " << status.MPI_SOURCE
-                     << " s délkou cesty " << receivedBoard.getPathLen() <<
-                     " (best=" << bestPathLen << ")" << endl;
+                //cout << myRank << ": Dostal jsem vyřešenou instaci od procesu " << status.MPI_SOURCE
+                     //<< " s délkou cesty " << receivedBoard.getPathLen() <<
+                     //" (best=" << bestPathLen << ")" << endl;
 
                 // update best solution
                 if (receivedBoard.getPathLen() < bestPathLen) {
@@ -841,7 +841,7 @@ int main(int argc, char **argv) {
                 if (status.MPI_TAG == MessageTag::WORK) {
                     // receive & deserializeFromBuffer message
                     MPI_Get_count(&status, MPI_CHAR, &msgLen);
-                    cout << myRank << ": " << "Dostal jsem instanci (" << msgLen << " bajtů) k vyřešení" << endl;
+                    //cout << myRank << ": " << "Dostal jsem instanci (" << msgLen << " bajtů) k vyřešení" << endl;
                     MPI_Recv(buf, msgLen, MPI_CHAR, status.MPI_SOURCE, status.MPI_TAG, MPI_COMM_WORLD,
                              MPI_STATUS_IGNORE);
                     Instance receivedInstance = Instance::deserializeFromBuffer(buf, msgLen);
@@ -853,8 +853,8 @@ int main(int argc, char **argv) {
                     // send result
                     bestBoard.serializeToBuffer(buf, bufLen, msgLen);
                     MPI_Send(buf, msgLen, MPI_CHAR, 0, MessageTag::DONE, MPI_COMM_WORLD);
-                    cout << myRank << ": " << "Odeslal jsem vyřešenou instanci s délkou cesty "
-                         << bestBoard.getPathLen() << endl;
+                    //cout << myRank << ": " << "Odeslal jsem vyřešenou instanci s délkou cesty "
+                         //<< bestBoard.getPathLen() << endl;
                 } else if (status.MPI_TAG == MessageTag::FINISHED) {
                     cout << myRank << ": " << "Ukončuji se, master nemá další instance k vyřešení" << endl;
                     break;
