@@ -16,9 +16,9 @@ createDirectory ${OUT_DIR}
 
 INSTANCES=(7 10 12)
 PROCNUMS=(1 2 4 6 8 1 16 20)
-for INSTANCE in ${INSTANCES}
+for INSTANCE in ${INSTANCES[*]}
 do
-	for PROCNUM in ${PROCNUMS}
+	for PROCNUM in ${PROCNUMS[*]}
 	do
 		WORK_DIR="${OUT_DIR}/saj${INSTANCE}-p${PROCNUM}"
 		createDirectory ${WORK_DIR}
@@ -38,8 +38,11 @@ do
 
 		sed "s/{INSTANCE}/$INSTANCE/g; s/{PROCNUM}/$PROCNUM/g" ${RUN_SCRIPT_TEMPLATE} > ${RUN_SCRIPT}
 		echo -e "\tQRUN: ${QRUN_CMD} ${RUN_SCRIPT}"
+		touch ${WORK_DIR}/{stderr,stdout}
 		#${QRUN_CMD} ${RUN_SCRIPT}
+		echo "============================="
 	done
 done
 
+echo "DONE"
 exit 0
