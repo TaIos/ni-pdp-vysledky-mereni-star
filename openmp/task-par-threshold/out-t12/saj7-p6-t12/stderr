@@ -1,0 +1,1 @@
+/opt/share/sge/default/spool/node-024/job_scripts/133723: line 30: 20890 Segmentation fault      (core dumped) /home/saframa6/testing/openmp/task-par-threshold/out-t12/saj7-p6-t12/run.out /home/saframa6/ni-pdp-semestralka/data/saj7.txt

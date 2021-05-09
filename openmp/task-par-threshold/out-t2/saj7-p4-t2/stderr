@@ -1,0 +1,80 @@
+*** Error in `/home/saframa6/testing/openmp/task-par-threshold/out-t2/saj7-p4-t2/run.out': corrupted double-linked list: 0x00000000022dc6b0 ***
+======= Backtrace: =========
+/lib64/libc.so.6(+0x7f5d4)[0x2b9c520915d4]
+/lib64/libc.so.6(+0x8151d)[0x2b9c5209351d]
+/home/saframa6/testing/openmp/task-par-threshold/out-t2/saj7-p4-t2/run.out[0x402f5b]
+/home/saframa6/testing/openmp/task-par-threshold/out-t2/saj7-p4-t2/run.out[0x403668]
+/home/saframa6/testing/openmp/task-par-threshold/out-t2/saj7-p4-t2/run.out[0x403042]
+/home/saframa6/testing/openmp/task-par-threshold/out-t2/saj7-p4-t2/run.out[0x403668]
+/home/saframa6/testing/openmp/task-par-threshold/out-t2/saj7-p4-t2/run.out[0x403042]
+/home/saframa6/testing/openmp/task-par-threshold/out-t2/saj7-p4-t2/run.out[0x403668]
+/home/saframa6/testing/openmp/task-par-threshold/out-t2/saj7-p4-t2/run.out[0x403042]
+/home/saframa6/testing/openmp/task-par-threshold/out-t2/saj7-p4-t2/run.out[0x403668]
+/home/saframa6/testing/openmp/task-par-threshold/out-t2/saj7-p4-t2/run.out[0x403042]
+/home/saframa6/testing/openmp/task-par-threshold/out-t2/saj7-p4-t2/run.out[0x403668]
+/home/saframa6/testing/openmp/task-par-threshold/out-t2/saj7-p4-t2/run.out[0x403042]
+/home/saframa6/testing/openmp/task-par-threshold/out-t2/saj7-p4-t2/run.out[0x403668]
+/lib64/libgomp.so.1(GOMP_task+0x185)[0x2b9c519ccb55]
+/home/saframa6/testing/openmp/task-par-threshold/out-t2/saj7-p4-t2/run.out[0x4032f8]
+/lib64/libgomp.so.1(+0xffbe)[0x2b9c519c9fbe]
+/lib64/libgomp.so.1(+0x18d14)[0x2b9c519d2d14]
+/home/saframa6/testing/openmp/task-par-threshold/out-t2/saj7-p4-t2/run.out[0x403be5]
+/home/saframa6/testing/openmp/task-par-threshold/out-t2/saj7-p4-t2/run.out[0x4020a9]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x2b9c520343d5]
+/home/saframa6/testing/openmp/task-par-threshold/out-t2/saj7-p4-t2/run.out[0x40294f]
+======= Memory map: ========
+00400000-00407000 r-xp 00000000 00:29 2546491                            /home/saframa6/testing/openmp/task-par-threshold/out-t2/saj7-p4-t2/run.out
+00606000-00607000 r--p 00006000 00:29 2546491                            /home/saframa6/testing/openmp/task-par-threshold/out-t2/saj7-p4-t2/run.out
+00607000-00608000 rw-p 00007000 00:29 2546491                            /home/saframa6/testing/openmp/task-par-threshold/out-t2/saj7-p4-t2/run.out
+022d4000-022f5000 rw-p 00000000 00:00 0                                  [heap]
+2b9c5118d000-2b9c511af000 r-xp 00000000 fd:00 29098606                   /usr/lib64/ld-2.17.so
+2b9c511af000-2b9c511b3000 rw-p 00000000 00:00 0 
+2b9c511be000-2b9c511c4000 rw-p 00000000 00:00 0 
+2b9c513ae000-2b9c513af000 r--p 00021000 fd:00 29098606                   /usr/lib64/ld-2.17.so
+2b9c513af000-2b9c513b0000 rw-p 00022000 fd:00 29098606                   /usr/lib64/ld-2.17.so
+2b9c513b0000-2b9c513b1000 rw-p 00000000 00:00 0 
+2b9c513b1000-2b9c5149a000 r-xp 00000000 fd:00 29103370                   /usr/lib64/libstdc++.so.6.0.19
+2b9c5149a000-2b9c51699000 ---p 000e9000 fd:00 29103370                   /usr/lib64/libstdc++.so.6.0.19
+2b9c51699000-2b9c516a1000 r--p 000e8000 fd:00 29103370                   /usr/lib64/libstdc++.so.6.0.19
+2b9c516a1000-2b9c516a3000 rw-p 000f0000 fd:00 29103370                   /usr/lib64/libstdc++.so.6.0.19
+2b9c516a3000-2b9c516b8000 rw-p 00000000 00:00 0 
+2b9c516b8000-2b9c517b9000 r-xp 00000000 fd:00 29103349                   /usr/lib64/libm-2.17.so
+2b9c517b9000-2b9c519b8000 ---p 00101000 fd:00 29103349                   /usr/lib64/libm-2.17.so
+2b9c519b8000-2b9c519b9000 r--p 00100000 fd:00 29103349                   /usr/lib64/libm-2.17.so
+2b9c519b9000-2b9c519ba000 rw-p 00101000 fd:00 29103349                   /usr/lib64/libm-2.17.so
+2b9c519ba000-2b9c519df000 r-xp 00000000 fd:00 29099396                   /usr/lib64/libgomp.so.1.0.0
+2b9c519df000-2b9c51bde000 ---p 00025000 fd:00 29099396                   /usr/lib64/libgomp.so.1.0.0
+2b9c51bde000-2b9c51bdf000 r--p 00024000 fd:00 29099396                   /usr/lib64/libgomp.so.1.0.0
+2b9c51bdf000-2b9c51be0000 rw-p 00025000 fd:00 29099396                   /usr/lib64/libgomp.so.1.0.0
+2b9c51be0000-2b9c51bf5000 r-xp 00000000 fd:00 29103510                   /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+2b9c51bf5000-2b9c51df4000 ---p 00015000 fd:00 29103510                   /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+2b9c51df4000-2b9c51df5000 r--p 00014000 fd:00 29103510                   /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+2b9c51df5000-2b9c51df6000 rw-p 00015000 fd:00 29103510                   /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+2b9c51df6000-2b9c51e0d000 r-xp 00000000 fd:00 29098643                   /usr/lib64/libpthread-2.17.so
+2b9c51e0d000-2b9c5200c000 ---p 00017000 fd:00 29098643                   /usr/lib64/libpthread-2.17.so
+2b9c5200c000-2b9c5200d000 r--p 00016000 fd:00 29098643                   /usr/lib64/libpthread-2.17.so
+2b9c5200d000-2b9c5200e000 rw-p 00017000 fd:00 29098643                   /usr/lib64/libpthread-2.17.so
+2b9c5200e000-2b9c52012000 rw-p 00000000 00:00 0 
+2b9c52012000-2b9c521d4000 r-xp 00000000 fd:00 29098617                   /usr/lib64/libc-2.17.so
+2b9c521d4000-2b9c523d4000 ---p 001c2000 fd:00 29098617                   /usr/lib64/libc-2.17.so
+2b9c523d4000-2b9c523d8000 r--p 001c2000 fd:00 29098617                   /usr/lib64/libc-2.17.so
+2b9c523d8000-2b9c523da000 rw-p 001c6000 fd:00 29098617                   /usr/lib64/libc-2.17.so
+2b9c523da000-2b9c523df000 rw-p 00000000 00:00 0 
+2b9c523df000-2b9c523e0000 ---p 00000000 00:00 0 
+2b9c523e0000-2b9c525e0000 rw-p 00000000 00:00 0 
+2b9c525e0000-2b9c525e1000 ---p 00000000 00:00 0 
+2b9c525e1000-2b9c527e1000 rw-p 00000000 00:00 0 
+2b9c527e1000-2b9c527e2000 ---p 00000000 00:00 0 
+2b9c527e2000-2b9c529e2000 rw-p 00000000 00:00 0 
+2b9c54000000-2b9c54021000 rw-p 00000000 00:00 0 
+2b9c54021000-2b9c58000000 ---p 00000000 00:00 0 
+2b9c5c000000-2b9c5c021000 rw-p 00000000 00:00 0 
+2b9c5c021000-2b9c60000000 ---p 00000000 00:00 0 
+2b9c64000000-2b9c64021000 rw-p 00000000 00:00 0 
+2b9c64021000-2b9c68000000 ---p 00000000 00:00 0 
+2b9c68000000-2b9c68021000 rw-p 00000000 00:00 0 
+2b9c68021000-2b9c6c000000 ---p 00000000 00:00 0 
+7ffe923e0000-7ffe92402000 rw-p 00000000 00:00 0                          [stack]
+7ffe9248e000-7ffe92490000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+/opt/share/sge/default/spool/node-025/job_scripts/133624: line 30:  1926 Aborted                 (core dumped) /home/saframa6/testing/openmp/task-par-threshold/out-t2/saj7-p4-t2/run.out /home/saframa6/ni-pdp-semestralka/data/saj7.txt

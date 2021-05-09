@@ -1,0 +1,40 @@
+3: Čekém na přidělení první instance
+1: Čekém na přidělení první instance
+2: Čekém na přidělení první instance
+Počet slave procesů: 3
+Počet vygenerovaných instancí: 265
+0: Posílam první instanci (250 bajtů) procesu 1
+0: Posílam první instanci (250 bajtů) procesu 2
+0: Posílam první instanci (250 bajtů) procesu 3
+3: Ukončuji se, master nemá další instance k vyřešení
+3: Elapsed time is 157.724489.
+2: Ukončuji se, master nemá další instance k vyřešení
+2: Elapsed time is 157.733846.
+===========ŘEŠENÍ============
+Počet tahů: 22
+4,8 *
+2,0 *
+8,4 *
+4,1 *
+9,5 *
+2,2
+11,7 *
+1,4
+9,9 *
+2,6 *
+7,7 *
+1,8 *
+11,11 *
+3,9
+4,4 *
+1,10
+0,8 *
+2,8 *
+1: Ukončuji se, master nemá další instance k vyřešení
+1: Elapsed time is 183.247242.
+5,3
+1,6
+3,1 *
+0,4 *
+==============================
+0: Elapsed time is 183.247465.

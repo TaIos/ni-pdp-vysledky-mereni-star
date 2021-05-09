@@ -1,0 +1,3 @@
+*** Error in `/home/saframa6/testing/openmp/task-par-threshold/out-t10/saj10-p6-t10/run.out': corrupted double-linked list: 0x0000000001f74f10 ***
+======= Backtrace: =========
+/opt/share/sge/default/spool/node-025/job_scripts/133700: line 30:  4517 Segmentation fault      (core dumped) /home/saframa6/testing/openmp/task-par-threshold/out-t10/saj10-p6-t10/run.out /home/saframa6/ni-pdp-semestralka/data/saj10.txt
